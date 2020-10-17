@@ -32,7 +32,7 @@ app = Flask(__name__)
 # create route that renders index.html template
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("static/index.html")
 
 # Query the database and send the jsonified results
 @app.route("/api/bball")
