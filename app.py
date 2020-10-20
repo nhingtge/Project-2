@@ -34,6 +34,14 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/teams")
+def teams():
+    return render_template("teams.html")
+
+@app.route("/individuals")
+def individuals():
+    return render_template("individuals.html")
+
 @app.route("/api/datatable")
 def datatable():
 
@@ -69,7 +77,8 @@ def Basketball():
 
     session = Session(engine)
 
-    results = session.query(Bball.League,Bball.Season,Bball.Stage,Bball.League,Bball.Team,Bball.GP,Bball.MIN,Bball.FGA,Bball.REB,Bball.AST).all()
+    results = session.query(
+        Bball.League,Bball.Season,Bball.Stage,Bball.League,Bball.Team,Bball.GP,Bball.MIN,Bball.FGA,Bball.REB,Bball.AST).all()
 
     league = [result[0] for result in results]
     season = [result[1] for result in results]
