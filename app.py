@@ -42,6 +42,10 @@ def teams():
 def individuals():
     return render_template("individuals.html")
 
+@app.route("/table")
+def table():
+    return render_template("table.html")
+
 @app.route("/api/datatable")
 def datatable():
 
