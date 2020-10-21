@@ -1,11 +1,12 @@
 const url = "/api/datatable";
-  d3.json(url).then(function(response) {
+$(document).ready(function() {
+        d3.json(url).then(function(response) {
     dataSet=response["results"]
-    $(document).ready(function() {
+    console.log(dataSet); 
         $('#myTable').DataTable( {
             data: dataSet,
             columns: [
-                { title: "Leauge" },
+                { title: "League" },
                 { title: "Season" },
                 { title: "Stage" },
                 { title: "Player" },
@@ -15,9 +16,9 @@ const url = "/api/datatable";
                 { title: "Field Goals" },
                 { title: "Rebounds" },
                 { title: "Assists" }
-
             ]
         } );
+        console.log(response);    
     } );
-    console.log(response);
+
   })
