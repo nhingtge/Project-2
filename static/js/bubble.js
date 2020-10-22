@@ -12,7 +12,7 @@ var trace1 = {
   var data = [trace1];
   
   var layout = {
-    title: 'Total Team 3PM Per Franchise (2019-2020, Regular Season)',
+    title: 'Total Team 3-Pointers Made Per Franchise (2019-2020, Regular Season)',
     showlegend: false,
     height: 600,
     width: 1600
