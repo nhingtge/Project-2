@@ -51,7 +51,7 @@ def datatable():
 
     session = Session(engine)
     datatable=[]
-    results = session.query(Bball.League,Bball.Season,Bball.Stage,Bball.League,Bball.Team,Bball.GP,Bball.MIN,Bball.FGA,Bball.REB,Bball.AST).all()
+    results = session.query(Bball.League,Bball.Season,Bball.Stage,Bball.Player,Bball.Team,Bball.GP,Bball.MIN,Bball.FGA,Bball.REB,Bball.AST).all()
     datatable = [list(element) for element in results]
     dataresults={"results": datatable}
     return jsonify (dataresults)
@@ -63,7 +63,7 @@ def Basketball():
     session = Session(engine)
 
     results = session.query(
-        Bball.League,Bball.Season,Bball.Stage,Bball.League,Bball.Team,Bball.GP,Bball.MIN,Bball.FGA,Bball.REB,Bball.AST).all()
+        Bball.League,Bball.Season,Bball.Stage,Bball.Player,Bball.Team,Bball.GP,Bball.MIN,Bball.FGA,Bball.REB,Bball.AST).all()
 
     league = [result[0] for result in results]
     season = [result[1] for result in results]
